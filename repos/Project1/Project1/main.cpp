@@ -2,6 +2,7 @@
 #include"HDT.h"
 int main()
 {
+	srand(time(0));
 	/*List l;
 	l.count = nhapn();
 	create(l);
@@ -33,11 +34,26 @@ int main()
 	cout << b * b * b;
 	cout << a / b / b;*/
 
-	List l;
+	/*List l;
 	l.count = nhapn();
 	create(l);
 	xuat(l);
-	heapsort(l);
-	xuat(l);
+	mergeSort(l);
+	xuat(l);*/
+
+	/*Phieu a;
+	
+	a.xuat();
+	xep(a, 0, a.n - 1);
+	a.xuat();
+	cout << "\nCO " << SoSP(a) << " nho hon 80";*/
+	
+
+	LH a;
+	a.nhap();
+	a.xuat();
+	cout << "\nCo sinh vien" << SoSV(a, 11) << " khoa 11";
+	xep1(a);
+	a.xuat();
 	return 0;
 }
