@@ -20,7 +20,7 @@ int main()
 	firstAdd(li);
 	travel(li);*/
 
-	PhanSo a, b;
+	/*PhanSo a, b;
 	cout << "\nNhap ps";
 	cin >> a;
 	cout << a;
@@ -31,6 +31,13 @@ int main()
 	cout << a - b;
 	cout << -a;
 	cout << b * b * b;
-	cout << a / b / b;
+	cout << a / b / b;*/
+
+	List l;
+	l.count = nhapn();
+	create(l);
+	xuat(l);
+	heapsort(l);
+	xuat(l);
 	return 0;
 }

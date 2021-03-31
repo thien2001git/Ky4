@@ -19,7 +19,7 @@ int nhapn()
 	{
 		cout << "Nhap n(n>0): ";
 		cin >> n;
-	} while (n<0);
+	} while (n < 0);
 	return n;
 }
 
@@ -102,6 +102,8 @@ int PhanManh(List& z, int low, int hight)
 	return l;
 }
 
+
+
 void qs(List& z, int low, int hight)
 {
 	//cout << ".";
@@ -112,6 +114,36 @@ void qs(List& z, int low, int hight)
 
 		qs(z, low, pivot - 1);
 		qs(z, pivot + 1, hight);
+	}
+}
+
+//heapsort
+void heapNode(List& z, int j)
+{
+	if (j * 2 + 1 < z.count)
+	{
+		int l = j * 2 + 1;
+		int r = j * 2 + 2;
+		if (z.e[l].a > z.e[j].a)
+		{
+			swap(z.e[j], z.e[l]);
+			heapNode(z, l);
+		}
+		if (z.e[r].a > z.e[j].a)
+		{
+			swap(z.e[j], z.e[r]);
+			heapNode(z, r);
+		}
+		heapNode(z, j - 1);
+	}
+}
+
+void heapsort(List& z)
+{
+	for (int i = z.count - 1; i >= 0; i--)
+	{
+		heapNode(z, z.count / 2 - 1);
+		swap(z.e[i], z.e[0]);
 	}
 }
 
@@ -150,7 +182,7 @@ void travel(tro li)
 
 tro search(tro li)
 {
-	tro q=li;
+	tro q = li;
 	while (q != NULL/*&& dk*/)
 	{
 		q->next;
