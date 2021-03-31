@@ -118,33 +118,107 @@ void qs(List& z, int low, int hight)
 }
 
 //heapsort
-void heapNode(List& z, int j)
+void heapNode(List& z, int j, int n)
 {
-	if (j * 2 + 1 < z.count)
+	int l = j * 2 + 1;
+	int r = j * 2 + 2;
+	if (z.e[l].a > z.e[r].a)
 	{
-		int l = j * 2 + 1;
-		int r = j * 2 + 2;
-		if (z.e[l].a > z.e[j].a)
+		if (z.e[j].a < z.e[l].a)
 		{
 			swap(z.e[j], z.e[l]);
-			heapNode(z, l);
+			heapNode(z, l, n);
 		}
-		if (z.e[r].a > z.e[j].a)
+	}
+	else
+	{
+		if (z.e[j].a < z.e[r].a)
 		{
 			swap(z.e[j], z.e[r]);
-			heapNode(z, r);
+			heapNode(z, r, n);
 		}
-		heapNode(z, j - 1);
 	}
 }
 
 void heapsort(List& z)
 {
-	for (int i = z.count - 1; i >= 0; i--)
+	for (int i = z.count / 2 - 1; i >= 0; i--)
 	{
-		heapNode(z, z.count / 2 - 1);
-		swap(z.e[i], z.e[0]);
+		heapNode(z, i, z.count);
 	}
+	for (int i = z.count; i >= 2; i--)
+	{
+		swap(z.e[0], z.e[i - 1]);
+		heapNode(z, 0, i - 1);
+	}
+}
+
+
+///merger
+void merge(List& l, List& z, int bt1, int bt2, int w1, int w2)
+{
+	int bp1 = bt1 + w1 - 1;
+	int bp2 = bt2 + w2 - 1;
+	int i = bt1;
+	int j = bt2;
+	int k = bt1;
+	while (i <= bp1 && j <= bp2)
+	{
+		if (l.e[j].a < l.e[i].a)
+		{
+			z.e[k] = l.e[j];
+			j++;
+			k++;
+		}
+		else
+		{
+			z.e[k] = l.e[i];
+			i++;
+			k++;
+		}
+	}
+	while (j <= bp2)
+	{
+		z.e[k] = l.e[j];
+		j++;
+		k++;
+	}
+	while (i <= bp1)
+	{
+		z.e[k] = l.e[i];
+		i++;
+		k++;
+	}
+	for (int c = bt1; c <= bp2; c++)
+	{
+		l.e[c] = z.e[c];
+	}
+}
+void pass(List& l, List& z, int k)
+{
+	int SoCap = l.count / (2 * k);
+	int SoPtTrongCap = 2 * k * SoCap;
+	int SoPtLe = l.count - SoPtTrongCap;
+	for (int i = 1; i <= SoCap; i++)
+	{
+		int bt1 = (2 * i - 2) * k;
+		merge(l, z, bt1, bt1 + k, k, k);
+	}
+	if (SoPtLe > k)
+		merge(l, z, 0, SoPtTrongCap + k, k, SoPtLe - k);
+}
+
+void mergeSort(List& l)
+{
+	int k = 1;
+	List z;
+	z.count = l.count;
+	while (k < l.count)
+	{
+		pass(l, z, k);
+		k *= 2;
+	}
+	xuat(l);
 }
 
 struct Node
