@@ -18,7 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HDT.cpp">
+    <ClCompile Include="HDH.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sjf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
