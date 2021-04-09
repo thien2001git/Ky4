@@ -10,17 +10,17 @@ bằng phương pháp tìm kiếm tuần tự.
 - Thiết kế giải thuật tìm tìm kiếm.
 - Cài đặt chương trình ứng dụng.
 */
-int Tim(int *a, int n, int key)
+int Tim(int* a, int n, int key)
 {
-    int i=0;
-    a[n] = 404;
-    while (a[i] == 404)
-    {
-        if(a[i]==key) break;
-        i++;
-    }
-    if(i<n && a[i]==key) return i;
-    else return -1;
+	int i = 0;
+	a[n] = 404;
+	while (a[i] != 404)
+	{
+		if (a[i] == key) break;
+		i++;
+	}
+	if (i < n) return i;
+	else return -1;
 }
 /*Bài 2: Tìm kiếm nhị phân
 Bài toán:
@@ -31,32 +31,33 @@ bằng phương pháp tìm kiếm nhị phân.
 - Thiết kế giải thuật tìm tìm kiếm.
 - Cài đặt chương trình ứng dụng.
 */
-void Xep0(int* l)
+void Xep0(int* a, int n)
 {
-    for (int i = 0; i < l.count-1; i++)   
-    {
-        int m=i;
-        for(int j=i+1;j<l.count;j++)
-            if(l[j]<l[m])
-                m=j;
-        swap(l[m],l[i]);
-    }
+	for (int i = 0; i < n - 1; i++)
+	{
+		int m = i;
+		for (int j = i + 1; j < n; j++)
+			if (a[j] < a[m])
+				m = j;
+		swap(a[m], a[i]);
+	}
 }
-int timNhi(int *a, int l, int r, int key)
+int timNhi(int* a, int l, int r, int key)
 {
-    if(l>r) return -1;
-    else
-    {
-        int m=(l+r)/2;
-            return m;
-        else
-        {
-            if(a[m]<key)
-                return timNhi(a,l,m-1,key);
-            else
-                return timNhi(a,m+1,r,key);
-        }
-    }
+	if (l > r) return -1;
+	else
+	{
+		int m = (l + r) / 2;
+		if (a[m] == key)
+			return m;
+		else
+		{
+			if (a[m] < key)
+				return timNhi(a, l, m - 1, key);
+			else
+				return timNhi(a, m + 1, r, key);
+		}
+	}
 }
 /*Bài 3: Ứng dụng tìm kiếm danh sách
 Yêu cầu:
@@ -72,45 +73,45 @@ tìm kiếm nhị phân.
 #define ten 30
 struct Data
 {
-    char HoTen[ten],gt[ma];
-    int nam;
-    float DiemTK;
+	char HoTen[ten], gt[ma];
+	int nam;
+	float DiemTK;
 };
 struct List
 {
-    int count;
-    Data *a;
+	int count;
+	Data* a;
 };
 void Xep(List& l)
 {
-    for (int i = 0; i < l.count-1; i++)   
-    {
-        int m=i;
-        for(int j=i+1;j<l.count;j++)
-            if(l.a[j].DiemTK<l.a[m].DiemTK)
-                m=j;
-        swap(a[m],a[i]);
-    }
+	for (int i = 0; i < l.count - 1; i++)
+	{
+		int m = i;
+		for (int j = i + 1; j < l.count; j++)
+			if (l.a[j].DiemTK < l.a[m].DiemTK)
+				m = j;
+		swap(l.a[m], l.a[i]);
+	}
 }
 int timTT(List l, char name[], float diem)
 {
-    int i=0;
-    while (l.a[i].DiemTK<diem&&i<l.count)
-    {
-        if(l.a[i].DiemTK==diem&&strcmp(name,l.a[i].HoTen)==0) return 1;
-    }
-    return -1;
+	int i = 0;
+	while (l.a[i].DiemTK < diem && i < l.count)
+	{
+		if (l.a[i].DiemTK == diem && strcmp(name, l.a[i].HoTen) == 0) return 1;
+	}
+	return -1;
 }
 int BinSear(List& l, int le, int ri, float diem)
 {
-    int m=(le+ri)/2;
-    if(l.a[m].DiemTK==diem)
-        return m;
-    else
-    {
-        if(l.a[m].DiemTK<diem)
-            return BinSear(l,m+1,ri,diem);
-        else
-            return BinSear(l,le,m-1,diem);
-    }
+	int m = (le + ri) / 2;
+	if (l.a[m].DiemTK == diem)
+		return m;
+	else
+	{
+		if (l.a[m].DiemTK < diem)
+			return BinSear(l, m + 1, ri, diem);
+		else
+			return BinSear(l, le, m - 1, diem);
+	}
 }
