@@ -1,5 +1,28 @@
 #include<iostream>
 using namespace std;
+void xm(int* a, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << "\t" << a[i];
+	}
+}
+int nm0()
+{
+	int n;
+	cout << "n = ";
+	cin >> n;
+	return n;
+}
+void nm(int *a, int& n)
+{
+	
+	for (int i = 0; i < n; i++)
+	{
+		cout << "a[" << i + 1 << "] = ";
+		cin >> a[i];
+	}
+}
 /*Bài 1: Sắp xếp nổi bọt Bài toán:
 Cho dãy số nguyên x = {34,   14,   24,   54,   84,   64,   94,  74,  04}
 Yêu cầu:

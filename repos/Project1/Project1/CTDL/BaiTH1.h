@@ -89,7 +89,7 @@ int gt(int a, int n)
 lược chia để trị.
 - Viết định nghĩa đệ quy theo mô tả trên.
 - Thiết kế giải thuật đếm theo chiến lược chia để trị.*/
-int dem(int* a, int l, int r,  int k)
+int dem0(int* a, int l, int r,  int k)
 {
 	if (r == l)
 	{
@@ -99,6 +99,6 @@ int dem(int* a, int l, int r,  int k)
 	else
 	{
 		int m = (l + r) / 2;
-		return dem(a, l, m, k) + dem(a, m + 1, r, k);
+		return dem0(a, l, m, k) + dem0(a, m + 1, r, k);
 	}
 }
