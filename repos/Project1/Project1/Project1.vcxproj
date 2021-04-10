@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaiTH5.h" />
+    <ClInclude Include="BaiTH6.h" />
     <ClInclude Include="CTDLDvaGT.h" />
     <ClInclude Include="CTDL\BaiTH1.h" />
     <ClInclude Include="CTDL\BaiTH2.h" />

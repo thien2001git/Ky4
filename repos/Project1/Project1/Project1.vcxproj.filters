@@ -53,5 +53,8 @@
     <ClInclude Include="BaiTH5.h">
       <Filter>Source Files\CTDL</Filter>
     </ClInclude>
+    <ClInclude Include="BaiTH6.h">
+      <Filter>Source Files\CTDL</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 #include"CTDL/BaiTH3.h"
 #include"CTDL/BaiTH4.h"
 #include"BaiTH5.h"
+#include"BaiTH6.h"
 
 int nhapB()
 {
@@ -252,7 +253,56 @@ int main()
 			xm(a, n);
 			break;
 		}
-		default:
+		case 3:
+		{
+			int* a, n;
+			n = nm0();
+			a = new int[n];
+			nm(a, n);
+			mergeSort(a, n);
+			xm(a, n);
+			break;
+		}
+		case 4:
+		{
+			int n;
+			cout << "n = ";
+			cin >> n;
+			sv* a = new sv[n];
+			for (int i = 0; i < n; i++) cin >> a[i];
+			for (int i = 0; i < n; i++) cout << a[i];
+			qs1(0, n - 1, a);
+			for (int i = 0; i < n; i++) cout << a[i];
+			break;
+		}
+		default: return main();
+			break;
+		}
+		break;
+	}
+	case 6:
+	{
+		int qq = nhapB();
+		switch (qq)
+		{
+		case 1:
+		{
+			ListSV l;
+			cout << "\n" << l;
+			l.remove(0);
+			cout << "\n" << l;
+			SINHVIEN e;//(masv, "pp", "cc", 2001, 0, 9.5);
+			l.insert(e, 2);
+			cout << "\n" << l;
+			chonTen(l);
+			cout << "\n" << l;
+			break;
+		}
+		case 2:
+		{
+			break;
+		}
+		default: return main();
 			break;
 		}
 		break;
