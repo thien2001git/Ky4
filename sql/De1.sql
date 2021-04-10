@@ -275,3 +275,87 @@ insert into benhnhan
 (mabn,hoten,gioitinh,ngaysinh,songaynhap,makhoa)
 VALUES
 (8,'ee',1,'1/1/2021',100,3)
+
+/*-------------------
+
+
+
+----------------------
+*/
+CREATE DATABASE qlsach
+go
+use qlsach go
+-- Create a new table called 'TableName' in schema 'SchemaName'
+-- Drop the table if it already exists
+create table tacgia
+(
+    matg int not null primary key,
+    tentg NVARCHAR(30),
+    soluongco int
+)
+
+create table nhaxb
+(
+    manxb int not null primary key,
+    tennxb NVARCHAR(30),
+    soluongco int
+)
+drop TABLE sach;
+create table sach
+(
+    masach int not null primary key,
+    tensach NVARCHAR(30),
+    matg int not null,
+    manxb int not null,
+    namxb int,
+    soluong int,
+    giaban money,
+    CONSTRAINT fk0 FOREIGN KEY (matg) REFERENCES tacgia(matg) on update cascade on delete cascade,
+    CONSTRAINT fk1 FOREIGN KEY (manxb) REFERENCES nhaxb(manxb) on update cascade on delete cascade
+)
+
+-- Insert rows into table 'tacgia'
+INSERT INTO tacgia
+(matg, tentg, soluongco)
+VALUES
+(1,'aa',50),
+(2,'ab',60),
+(3,'ca',80)
+
+INSERT into nhaxb
+(manxb,tennxb,soluongco)
+VALUES
+(1,'la',20),
+(2,'db',90),
+(3,'cj',40)
+
+insert into sach
+(masach,tensach,matg,manxb,namxb,soluong,giaban)
+VALUES
+(1,'dd',1,1,2009,10,50),
+(2,'ud',2,3,2008,20,20),
+(3,'dk',1,2,2005,80,90),
+(4,'df',3,1,2004,60,10),
+(5,'gd',2,1,2006,10,80)
+
+select * from tacgia;
+select * from nhaxb;
+select * from sach;
+
+GO
+alter view tg AS
+select tentg, masach, tensach,sum(soluong*giaban) AS N'Tổng tiền'
+from sach
+    INNER JOIN tacgia ON sach.matg = tacgia.matg
+    GROUP BY tentg, masach, tensach
+
+GO
+SELECT * FROM tg
+go
+CREATE VIEW nxb AS
+SELECT masach, tensach, tennxb, SUM(soluong*giaban)as N'Tiền bán'
+FROM sach
+    INNER JOIN nhaxb ON sach.manxb = nhaxb.manxb
+    GROUP BY masach, tensach, tennxb
+GO
+SELECT * FROM nxb
