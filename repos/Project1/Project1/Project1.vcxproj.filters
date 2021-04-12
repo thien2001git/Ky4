@@ -39,6 +39,12 @@
     <ClCompile Include="BaiTH8.cpp">
       <Filter>Source Files\CTDL</Filter>
     </ClCompile>
+    <ClCompile Include="BaiTH9.cpp">
+      <Filter>Source Files\CTDL</Filter>
+    </ClCompile>
+    <ClCompile Include="BaiTH10.cpp">
+      <Filter>Source Files\CTDL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CTDLDvaGT.h">
