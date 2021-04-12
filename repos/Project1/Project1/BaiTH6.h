@@ -9,8 +9,9 @@ class ListSV;
 class SINHVIEN
 {
 public:
-	SINHVIEN();
+	//SINHVIEN();
 	//SINHVIEN(char *a0, char *a1, char *a2, int a3, int a4, float a5);
+	void nhap();
 	friend ostream& operator<<(ostream& x, SINHVIEN y);
 	friend void chonTen(ListSV l);
 private:
@@ -19,7 +20,36 @@ private:
 	float diem;
 };
 
-SINHVIEN::SINHVIEN()
+//SINHVIEN::SINHVIEN()
+//{
+//	cout << "Nhap ma sv: ";
+//	fflush(stdin);
+//	cin.ignore();
+//	cin.getline(Masv, ma);
+//	cout << "Nhap ho dem sv: ";
+//	/*fflush(stdin);
+//	cin.ignore();*/
+//	cin.getline(HoDem, ma);
+//	cout << "Nhap ten sv: ";
+//	/*fflush(stdin);
+//	cin.ignore();*/
+//	cin.getline(Ten, ma);
+//	cout << "Nhap nam sinh sv: ";
+//	/*fflush(stdin);
+//	cin.ignore();*/
+//	cin >> ns;
+//	cout << "Nhap gioi tinh sv: ";
+//	/*fflush(stdin);
+//	cin.ignore();*/
+//	cin >> gt;
+//	cout << "Nhap diem sv: ";
+//	/*fflush(stdin);
+//	cin.ignore();*/
+//	cin >> diem;
+//
+//}
+#pragma warning(disable 4996)
+void SINHVIEN::nhap()
 {
 	cout << "Nhap ma sv: ";
 	fflush(stdin);
@@ -47,8 +77,6 @@ SINHVIEN::SINHVIEN()
 	cin >> diem;
 
 }
-#pragma warning(disable 4996)
-
 //SINHVIEN::SINHVIEN(char* a0, char* a1, char* a2, int a3, int a4, float a5)
 //{
 //	strcpy(Masv, a0);
@@ -184,7 +212,7 @@ void chonTen(ListSV l)
 class Node
 {
 public:
-	Node();
+	void nhap();
 	~Node();
 	int empty();
 
@@ -192,21 +220,24 @@ public:
 	void Einsert(SINHVIEN e);
 	void Minsert(Node* q, SINHVIEN e);
 	void Fremove();
-	void Mremove();
+	void Mremove(Node* m);
+	Node* search(int k);
+	void travel();
 private:
 	SINHVIEN infor;
 	Node* next;
 };
 typedef Node* tro;
-Node::Node()
+void Node::nhap()
 {
 	tro p, q;
 	q = this;
 	char tt;
+	//cout << "\nsikajs";
 
-	do
 	{
 		SINHVIEN e;
+		e.nhap();
 		p = new Node;
 		p->infor = e;
 		p->next = NULL;
@@ -218,7 +249,8 @@ Node::Node()
 		q = p;
 		cout << "\nCo nhap ko: ";
 		cin >> tt;
-	} while (toupper(tt) == 'c');
+	} while (tt == 'c');
+
 }
 
 Node::~Node()
@@ -270,5 +302,37 @@ void Node::Fremove()
 {
 	tro q = this;
 	*this = *q->next;
+	delete q;
+}
 
+void Node::Mremove(Node* m)
+{
+	tro q = m->next;
+	m->next = q->next;
+	delete q;
+}
+
+Node* Node::search(int k)
+{
+	tro q = this;
+	int i = 0;
+	while (q != NULL && i < 2)
+	{
+		q = q->next;
+		i++;
+	}
+	return q;
+}
+
+inline void Node::travel()
+{
+	if (this != NULL)
+	{
+		tro q = this;
+		while (q != NULL)
+		{
+			cout << "\n" << q->infor;
+			q = q->next;
+		}
+	}
 }

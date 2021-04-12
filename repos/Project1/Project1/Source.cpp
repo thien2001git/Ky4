@@ -4,6 +4,9 @@
 #include"CTDL/BaiTH4.h"
 #include"BaiTH5.h"
 #include"BaiTH6.h"
+#include"BaiTH7.h"
+#include"BaiTH8.h"
+//#include"BaiTH6.1.h"
 
 int nhapB()
 {
@@ -292,6 +295,7 @@ int main()
 			l.remove(0);
 			cout << "\n" << l;
 			SINHVIEN e;//(masv, "pp", "cc", 2001, 0, 9.5);
+			e.nhap();
 			l.insert(e, 2);
 			cout << "\n" << l;
 			chonTen(l);
@@ -300,6 +304,110 @@ int main()
 		}
 		case 2:
 		{
+			cout << "O file BaiTH6.1.cpp";
+			break;
+		}
+		default: return main();
+			break;
+		}
+		break;
+	}
+	case 7:
+	{
+		int qq = nhapB();
+		switch (qq)
+		{
+		case 1:
+		{
+			int n;
+			cout << "n = ";
+			cin >> n;
+			int q;
+			cout << "Nhap he so: ";
+			cin >> q;
+			Stack s{};
+			init(s);
+			cd(s, n, q);
+			xx(s);
+			break;
+		}
+		case 2:
+		{
+			Stack1 s{};
+			init1(s);
+			/*cout << "Nhap day ngoac: ";
+			fflush(stdin);
+			cin.ignore();*/
+			string a;
+			cout << "Nhap day ngoac: ";
+			cin >> a;
+			for (int i = 0; i < a.length(); i++)
+				s.a[i] = a[i];
+			s.top = a.length() - 1;
+			int kq = cd1(s);
+			if (kq == 1) cout << "\nDay dung";
+			else cout << "\nDay sai";
+			break;
+		}
+		case 3:
+		{
+			int n = nm0();
+			Stack2 s;
+			s.top = n - 1;
+			nm(s.a, n);
+			xm(s.a, s.top + 1);
+			loai2(s, 2);
+			cout << "\n";
+			xm(s.a, s.top + 1);
+			break;
+		}
+		default: return main();
+			break;
+		}
+
+
+		break;
+	}
+	case 8:
+	{
+		int qq = nhapB();
+		switch (qq)
+		{
+		case 1:
+		{
+			Quere x;
+			init2(x);
+			nhapKT(x);
+			cout << x.a;
+			break;
+		}
+		default: return main();
+			break;
+		}
+		break;
+	}
+	case 9:
+	{
+		int qq = nhapB();
+		switch (qq)
+		{
+		case 1:
+		{
+			break;
+		}
+		default: return main();
+			break;
+		}
+		break;
+	}
+	case 10:
+	{
+		int qq = nhapB();
+		switch (qq)
+		{
+		case 1:
+		{
+
 			break;
 		}
 		default: return main();
