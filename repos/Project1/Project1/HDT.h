@@ -2,6 +2,7 @@
 #pragma once
 #include<iostream>
 #include<iomanip>
+#include<fstream>
 using namespace std;
 #define ten 30
 #define ma 10
@@ -11,16 +12,42 @@ class PhanSo
 {
 
 public:
+	PhanSo();
+	PhanSo(float u, float v);
 	PhanSo operator+(PhanSo q);
 	PhanSo operator*(PhanSo q);
 	PhanSo operator/(PhanSo q);
 	PhanSo operator-(PhanSo q);
 	PhanSo operator-();
+	float operator++();
 	friend istream& operator>>(istream& x, PhanSo& p);
 	friend ostream& operator<<(ostream& x, PhanSo p);
 private:
 	float x, y;
 };
+template <class var>
+int ghiTep(var x)
+{
+	ofstream f("PHANSO.TXT", ios::out);
+	if (f.fail()) return 0;
+	else
+	{
+		f << x;
+		f.close();
+	}
+}
+
+PhanSo::PhanSo()
+{
+	x = 1;
+	y = 1;
+}
+
+PhanSo::PhanSo(float u, float v)
+{
+	x = u;
+	y = v;
+}
 
 PhanSo PhanSo::operator+(PhanSo q)
 {
@@ -56,6 +83,10 @@ PhanSo PhanSo::operator-()
 {
 	x = -x;
 	return *this;
+}
+float PhanSo::operator++()
+{
+	return x / y;
 }
 inline PhanSo PhanSo::operator*(PhanSo q)
 {
@@ -378,12 +409,156 @@ int SoSV(LH a, int k)
 
 void xep1(LH& a)
 {
-	for (int i = 0; i < a.n -1; i++)
+	for (int i = 0; i < a.n - 1; i++)
 	{
 		int m = i;
 		for (int j = i + 1; j < a.n; j++)
 			if (a.x[m].Khoa < a.x[j].Khoa)
 				m = j;
 		swap(a.x[m], a.x[i]);
+	}
+}
+
+
+/////////////////////////
+///////////////////
+////////////////////////
+#pragma warning(disable: 4996)
+class Hang
+{
+private:
+	char MaH[ma], TenH[ten];
+	float DG;
+	int sl, Nam;
+	friend istream& operator>>(istream& x, Hang& y);
+	friend ostream& operator<<(ostream& x, Hang y);
+	friend void sep(Hang* a, int n);
+	friend void choBiet(Hang* a, int n, char s[]);
+	friend void xoa(Hang* a, int& n, char* s);
+	friend void xoa1(Hang* a, int& n, int m);
+public:
+	Hang(/* args */);
+	Hang(char MaH1[], char TenH1[], float DG1, int sl1, int Nam1);
+};
+
+Hang::Hang(/* args */)
+{
+	strcpy(MaH, "");
+	strcpy(TenH, "");
+	DG = NULL;
+	sl = Nam = NULL;
+}
+
+Hang::Hang(char MaH1[], char TenH1[], float DG1, int sl1, int Nam1)
+{
+	strcpy(MaH, MaH1);
+	strcpy(TenH, TenH1);
+	DG = DG1;
+	sl = sl1;
+	Nam = Nam1;
+}
+
+istream& operator>>(istream& x, Hang& y)
+{
+	cout << "Nhap ma hang: ";
+	fflush(stdin);
+	cin.ignore();
+	x.getline(y.MaH, ma);
+	cout << "Nhap ten hang: ";
+	x.getline(y.TenH, ten);
+	cout << "Nhap don gia: ";
+	x >> y.DG;
+	cout << "Nhap so luong: ";
+	x >> y.sl;
+	cout << "Nhap nam: ";
+	x >> y.Nam;
+	return x;
+}
+
+ostream& operator<<(ostream& x, Hang y)
+{
+	x << "\n" << setw(ma) << y.MaH << setw(ten) << y.TenH << setw(ma) << y.sl << setw(ma) << y.DG << setw(ma) << y.Nam;
+	return x;
+}
+void sep(Hang* a, int n)
+{
+	float* tt = new float[n];
+	for (int i = 0; i < n; i++)
+	{
+		tt[i] = a[i].DG * a[i].sl;
+	}
+	for (int i = 0; i < n - 1; i++)
+	{
+		int m = i;
+		for (int j = i + 1; i < n; i++)
+			if (tt[m] > tt[j]) m = j;
+		swap(a[i], a[m]);
+		swap(tt[m], tt[i]);
+	}
+}
+void choBiet(Hang* a, int n, char s[])
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (strcmp(a[i].TenH, s) == 0)
+		{
+			cout << "\nCo " << s << " trong ds hang.";
+		}
+	}
+}
+void xuat(Hang* a, int n, char s[])
+{
+	ofstream f(s, ios::out);
+	for (int i = 0; i < n; i++)
+	{
+		f << a[i];
+	}
+	f.close();
+}
+void xuat1(Hang* a, int n, char s[])
+{
+	ofstream f(s, ios::app);
+	for (int i = 0; i < n; i++)
+	{
+		f << a[i];
+	}
+	f.close();
+}
+void xoa(Hang* a, int& n, char* s)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (strcmp(a[i].MaH, s) == 0)
+		{
+			for (int j = i; j < n - 1; j++)
+				a[i] = a[i + 1];
+			n--;
+			break;
+		}
+	}
+}
+void xoa1(Hang* a, int& n, int m)
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i].sl < m)
+		{
+			for (int j = i; j < n - 1; j++)
+				a[i] = a[i + 1];
+			n--;
+		}
+	}
+}
+void chen(Hang* a, int& n, int k, Hang z)
+{
+	if (k<0 || k>n) cout << "\nKhong hop le.";
+	else
+	{
+		for (int i = n; i >= k; i--)
+		{
+			a[i] = a[i - 1];
+		}
+		a[k] = z;
+		n++;
 	}
 }

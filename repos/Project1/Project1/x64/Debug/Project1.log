@@ -1,3 +1,3 @@
-﻿  BaiTH9.cpp
-C:\Users\hoang\source\Ky4\repos\Project1\Project1\BaiTH9.cpp(50): warning C4715: 'insert': not all control paths return a value
+﻿  main.cpp
+C:\Users\hoang\source\Ky4\repos\Project1\Project1\main.cpp(23,12): warning C4154: deletion of an array expression; conversion to pointer supplied
   Project1.vcxproj -> C:\Users\hoang\source\Ky4\repos\Project1\x64\Debug\Project1.exe

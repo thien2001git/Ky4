@@ -139,15 +139,103 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaiTH10.cpp" />
-    <ClCompile Include="BaiTH6.1.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH10\Bai1 LuyThua.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="BaiTH8.cpp">
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH10\Bai2 NoiBot.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="BaiTH9.cpp">
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH10\Bai3 Node.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH10\Bai4 List.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 1_Fibonaci.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 2_ThapHaNoi.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 3_UCLN.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 4_Max.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 5_LuyThua.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH1\Bài 6_Dem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH2\Bai 1_ItNhat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH2\Bai 2_XepBalo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH2\Bai 3_MaDiTuan.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH3\Bai1 TkTuanTu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH3\Bai2 TkNhiPhan.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH3\Bai3 TkSV.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH4\Bai1 NoiBot.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH4\Bai2 Chon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH4\Bai3 Chen.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH4\Bai4 SvChon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH5\Ba1 QS.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH5\Bai2 VunDong.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH5\Bai3 Tron.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH5\Bai4 SvQS.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH6\Bai1 List.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH6\Bai2 Node.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH7\Bai1 CdCoSo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH7\Bai2 KtNgoac.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH7\Bai3 LoaiPt.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH8\Bai1 UseQuere.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH8\Bai2 ThemVaXoa.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH8\Bai3 BenhNhan.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\code\Kì 4\cấu trúc dữ liệu và giải thuật\ThucHanhCauTrucDuLieu_HKH\BaiTH9\Bai1 PreOrd.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="HDH.cpp">
@@ -157,29 +245,15 @@
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="sjf.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaiTH5.h" />
-    <ClInclude Include="BaiTH6.h" />
-    <ClInclude Include="BaiTH7.h" />
     <ClInclude Include="CTDLDvaGT.h" />
-    <ClInclude Include="CTDL\BaiTH1.h" />
-    <ClInclude Include="CTDL\BaiTH2.h" />
-    <ClInclude Include="CTDL\BaiTH3.h" />
-    <ClInclude Include="CTDL\BaiTH4.h" />
     <ClInclude Include="HDT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
