@@ -482,28 +482,30 @@ ostream& operator<<(ostream& x, Hang y)
 }
 void sep(Hang* a, int n)
 {
-	float* tt = new float[n];
+	/*float* tt = new float[n];
 	for (int i = 0; i < n; i++)
 	{
 		tt[i] = a[i].DG * a[i].sl;
-	}
+	}*/
 	for (int i = 0; i < n - 1; i++)
 	{
 		int m = i;
-		for (int j = i + 1; i < n; i++)
-			if (tt[m] > tt[j]) m = j;
+		for (int j = i + 1; j < n; j++)
+			if ((a[j].DG * a[j].sl) < (a[m].DG * a[m].sl))
+				m = j;
 		swap(a[i], a[m]);
-		swap(tt[m], tt[i]);
 	}
 }
 void choBiet(Hang* a, int n, char s[])
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i <= n; i++)
 	{
 		if (strcmp(a[i].TenH, s) == 0)
 		{
 			cout << "\nCo " << s << " trong ds hang.";
+			break;
 		}
+		if (i == n) cout << "\nKhong co " << s << " trong ds hang.";
 	}
 }
 void xuat(Hang* a, int n, char s[])
